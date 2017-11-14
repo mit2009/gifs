@@ -1,0 +1,63 @@
+<html>
+<head>
+	<title>Crowdpattern GIF generator</title>
+	<link rel="stylesheet" href="../parent.css">
+	<link rel="stylesheet" href="../page.css">
+	<link rel="stylesheet" href="table.css">
+	<link rel="stylesheet" href="button.css">
+	<link rel="stylesheet" href="button2.css">
+	<!-- <link rel="icon" type="image/png" href="../../favicon.png" /> -->
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,700,500' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript" src="size.js"></script>
+</head>
+
+<body>
+	<h1>Click on your place in the crowd below.</h1>
+	<h2>(FRONT)</h2>
+	<table id="button_table">
+<!-- 		<?php
+		$myfile = fopen("size.txt","r") or die("Unable to determine size.");
+		$xDim = intval(fgets($myfile));
+		$yDim = intval(fgets($myfile));
+		fclose($myfile);
+
+		for ($i = 1; $i <= $xDim; $i++)
+		{
+			echo "<tr>";
+				for ($j = 1; $j <= $yDim; $j++)
+				{
+					echo "<td><a class=\"button\" href={$j}_{$i}.wav></a></td>";
+				}
+			echo "</tr>";
+		}
+
+		?> -->
+	</table>
+	<p>Web interface &amp script by Landon Carter, concept by Victor Hung.</p>
+	<p>Questions? Bugs? Requests? <a href="mailto:crowdGIF-admin@mit.edu">Email us</a>.</p>
+
+	<script type="text/javascript">
+		// console.log("working");
+		var content = "";
+		for (var i = 1; i <= dim_x; i++) {
+			content += "<tr>";
+			for (var j = 1; j <= dim_y; j++) {
+				content += "<td><a class=\"button\" href=";
+				content += j;
+				content += "_";
+				content += i;
+				content += ".wav></a></td>";
+			}
+			content += "</tr>";
+		}
+		// console.log(content);
+		// console.log($("#button_table"))	
+		$("#button_table").append(content);
+	</script>
+</body>
+
+
+</html>
+

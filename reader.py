@@ -48,14 +48,14 @@ delay = int(sys.argv[3])
 
 im = Image.open(filename)
 sz = im.size
-length = get_gif_num_frames(filename)
+length = get_gif_num_frames(filename) + delay/stepTime
 
 gif = []
 #initialize gif array
 for i in range(sz[0]):
     gif.append([])
     for j in range(sz[1]):
-        gif[i].append([0]*(length + delay/stepTime))
+        gif[i].append([765]*(length))
 
 k = 0
 print "initialized..."
@@ -99,7 +99,7 @@ for i in range(sz[0]):
         toWrite = [0]*length*SAMPLERATE*stepTime
         fname = str(i+1) + '_' + str(j+1) + '.wav'
         for k in range(1,length):
-            indStart = (k-1)*SAMPLERATE*stepTime
+            indStart = (k)*SAMPLERATE*stepTime
             indEnd = k*SAMPLERATE*stepTime
             if(abs(gif[i][j][k-1] - gif[i][j][k]) > 0):
                 toWrite[indStart:indStart + CHIMELENGTH] = beep;
@@ -119,10 +119,9 @@ for elt in done:
     plt.plot([i for i in range(len(cur))], cur)
     plt.show()
     
-target = open('wavs/size.txt', 'w')
-target.write(str(sz[0]))
-target.write('\n')
-target.write(str(sz[1]))
+target = open('wavs/size.js', 'w')
+target.write('dim_x = ' + str(sz[0]) + ';\n')
+target.write('dim_y = ' + str(sz[1]) + ';')
 target.close()
 
 print "done!"
