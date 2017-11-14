@@ -1,0 +1,46 @@
+<html>
+<head>
+	<title>Crowdpattern GIF generator</title>
+	<link rel="stylesheet" href="../parent.css">
+	<link rel="stylesheet" href="../page.css">
+	<link rel="stylesheet" href="table.css">
+	<link href="../lightbox/css/lightbox.css" rel="stylesheet" />
+	<link rel="icon" type="image/png" href="../favicon.png" />
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,700,500' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+
+<h1>Coordinate crowds using GIFs!</h1>
+<h2>Upload the GIF you'd like to render below.</h2>
+
+<form action="makeWavs.php" method="post" enctype="multipart/form-data">
+<input type="file" name="fileToUpload" id="fileToUpload"><br><br>
+
+<table>
+<tr><td>Time per GIF frame (sec)</td><td><input type="text" name="time" size="5"></td></tr>
+<tr><td>Time delay before start (sec)</td><td><input type="text" name="delay" size="5"></td></tr>
+</table>
+<br>
+<input type="submit">
+</form>
+
+<p>Web interface &amp script by Landon Carter, concept by Victor Hung.</p>
+<p>Questions? Bugs? Requests? <a href="mailto:crowdGIF-admin@mit.edu">Email us</a>.</p>
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-57039341-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+
+
+</html>

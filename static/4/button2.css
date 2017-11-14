@@ -1,0 +1,34 @@
+.button2 {
+    display: block;
+    background-color: #dadada;
+    width: 100px;
+    border: 1px solid #666666;
+    color:#666666;
+    text-align: center;
+	padding: 5px;
+	margin: 5px;
+}
+
+a.button2 {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+	font-size: 18px;
+	color: #666666;
+
+	text-decoration: none;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+
+	-webkit-transition: all .35s ease-out;
+  	-moz-transition: all 0.35s ease-out;
+  	-o-transition: all 0.35s ease-out;
+  	transition: all 0.35s ease-out;
+}
+
+a:hover.button2
+{
+	background-color: #666666;
+	border: 1px solid #666666;
+	color:#dadada;
+}
+
