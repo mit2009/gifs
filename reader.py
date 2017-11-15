@@ -97,7 +97,7 @@ blank = [0]*(stepTime*SAMPLERATE-CHIMELENGTH)
 for i in range(sz[0]):
     for j in range(sz[1]):
         toWrite = [0]*length*SAMPLERATE*stepTime
-        fname = str(i+1) + '_' + str(j+1) + '.wav'
+        fname = chr(i+65) + str(j+1) + '.wav'
         for k in range(1,length):
             indStart = (k)*SAMPLERATE*stepTime
             indEnd = k*SAMPLERATE*stepTime
@@ -116,8 +116,8 @@ for elt in done:
     wavFile = wave.open('wavs/' + elt, 'w')
     wavFile.setparams((1, 2, SAMPLERATE, len(newStr), 'NONE', 'not compressed'))
     wavFile.writeframes(newStr)
-    plt.plot([i for i in range(len(cur))], cur)
-    plt.show()
+    # plt.plot([i for i in range(len(cur))], cur)
+    # plt.show()
     
 target = open('wavs/size.js', 'w')
 target.write('dim_x = ' + str(sz[0]) + ';\n')
